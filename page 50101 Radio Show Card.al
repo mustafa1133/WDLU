@@ -1,17 +1,15 @@
-page 50100 "Radio Show List"
+page 50101 "Radio Show Card"
 {
-    PageType = List;
+    PageType = Card;
     SourceTable = "Radio Show";
-    //ApplicationArea = Basic;
-    UsageCategory = Administration;
 
     layout
     {
         area(Content)
         {
-            repeater(Group)
+            group(General)
             {
-                field("No."; Rec."No.") { ApplicationArea = Basic; }
+                field("No."; rec."No.") { ApplicationArea = Basic; }
                 field("Radio Show Type"; Rec."Radio Show Type") { ApplicationArea = Basic; }
                 field(Name; Rec.Name) { ApplicationArea = Basic; }
                 field("Run Time"; Rec."Run Time") { ApplicationArea = Basic; }
@@ -21,6 +19,7 @@ page 50100 "Radio Show List"
                 field("Audience Share"; Rec."Audience Share") { ApplicationArea = Basic; }
                 field("Advertising Revenue"; Rec."Advertising Revenue") { ApplicationArea = Basic; }
                 field("Royalty Cost"; Rec."Royalty Cost") { ApplicationArea = Basic; }
+
             }
         }
     }
