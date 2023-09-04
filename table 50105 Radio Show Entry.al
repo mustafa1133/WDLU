@@ -18,4 +18,12 @@ table 50105 "Radio Show Entry"
         field(120; "Publisher Code"; Code[10]) { }
 
     }
+
+    keys
+    {
+        key(PK; "Entry No.") { Clustered = true; }
+        key(Reporting; "Radio Show No.", Date) { SumIndexFields = "fee Amount"; }
+        key(Reporting2; Type, "No.", Date) { SumIndexFields = "Fee Amount"; }
+
+    }
 }
