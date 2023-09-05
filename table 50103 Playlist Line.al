@@ -6,7 +6,14 @@ table 50103 "Playlist Line"
         field(1; "Document No."; Code[20]) { }
         field(2; "Line No."; Integer) { }
         field(10; "Type"; Option) { OptionMembers = ,Resource,Show,Item; }
-        field(20; "No."; Code[20]) { }
+        field(20; "No."; Code[20])
+        {
+            TableRelation = if (type = const(Resource)) Resource."No."
+            Else
+            If (type = const(Show)) "Radio Show"."No."
+            Else
+            if (Type = const(Item)) Item."No.";
+        }
 
         field(30; "Data Format"; Option) { OptionMembers = ,Vinyl,CD,MP3,PSA,Advertisement; }
         field(40; "Publisher"; Code[10]) { }
